@@ -11,7 +11,12 @@ if not errorlevel 1 (
 taskkill /F /FI "IMAGENAME eq %filename%" /T
 color a
 ) else (
-echo [err] %filename% not found!
+echo [ERR]%filename% not found!
+echo %filename% | findstr /C:"info" >nul
+    if errorlevel 1 (
+        echo [ERR] no extension found.
+        color a 
+)
 color c
 )
 echo.
