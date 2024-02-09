@@ -13,7 +13,7 @@ color a
 echo "Chrome not found"
 color d
 )
-pause
+call :engine
 
 :banner
 echo =========== //\\      ==========   ll  //   ll  //=========  ++         ++         =========  ll=====
