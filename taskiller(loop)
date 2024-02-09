@@ -4,16 +4,21 @@ call :banner
 call :engine
 
 :engine
-color 0
+color 7
 set /p filename=Enter the filename to taskkill (with extension): 
 tasklist | findstr " %filename% " >nul
 if not errorlevel 1 (
 taskkill /F /FI "IMAGENAME eq %filename%" /T
 color a
 ) else (
-echo [err]%filename% not found!
+echo [err] %filename% not found!
 color c
 )
+echo.
+pause
+cls
+color 7
+call :banner
 call :engine
 
 :banner
