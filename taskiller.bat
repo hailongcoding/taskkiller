@@ -10,8 +10,8 @@ if not errorlevel 1 (
 taskkill /F /FI "IMAGENAME eq %filename%" /T
 color a
 ) else (
-echo "Chrome not found"
-color d
+echo [err]%filename% not found!
+color c
 )
 call :engine
 
