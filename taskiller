@@ -13,6 +13,7 @@ color a
 echo [err]%filename% not found!
 color c
 )
+echo.
 pause
 
 :banner
