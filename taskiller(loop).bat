@@ -16,11 +16,14 @@ tasklist | findstr " %filename% " >nul
 if not errorlevel 1 (
 taskkill /F /FI "IMAGENAME eq %filename%" /T
 color a
+echo.
+echo [ i ] Process complete.
 ) else (
-echo [ERR]%filename% not found!
+echo [ ! ]%filename% not found!
+echo [ i ] Process aborted.
 echo %filename% | findstr /C:"info" >nul
     if errorlevel 1 (
-        echo [ERR] no extension found.
+        echo [ ! ] no extension found.
         color a 
 )
 color c
