@@ -17,8 +17,10 @@ tasklist | findstr " %filename% " >nul
 if not errorlevel 1 (
 taskkill /F /FI "IMAGENAME eq %filename%" /T
 color a
+echo [ i ] Process complete.
 ) else (
-echo [err]%filename% not found!
+echo [ ! ]%filename% not found!
+echo [ i ] Process aborted
 color c
 )
 echo.
